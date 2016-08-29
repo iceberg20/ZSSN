@@ -1,7 +1,7 @@
 class ReportsController < ApplicationController
 	def infected
 
-		percent = ( infected_count/all_survivors) * 100 
+		percent = ( infected_count/all_survivors ) * 100 
 
 		render json: { "infected_survivors":"#{percent}"+"%" }
 	end
@@ -9,7 +9,7 @@ class ReportsController < ApplicationController
 	def non_infected
 
 
-		percent = ( non_infected_count/all_survivors) * 100 
+		percent = ( non_infected_count/all_survivors ) * 100 
 
 		render json: { "non_infected_survivors":"#{percent}"+"%" }		
 	end

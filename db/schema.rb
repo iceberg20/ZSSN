@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160827153729) do
+ActiveRecord::Schema.define(version: 20160829202955) do
+
+  create_table "inventories", force: :cascade do |t|
+    t.integer  "water"
+    t.integer  "food"
+    t.integer  "medication"
+    t.integer  "ammunition"
+    t.integer  "survivor_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["survivor_id"], name: "index_inventories_on_survivor_id"
+  end
 
   create_table "survivors", force: :cascade do |t|
     t.string   "name"
+    t.integer  "age"
     t.string   "gender"
     t.decimal  "lat",              precision: 10, scale: 6
     t.decimal  "long",             precision: 10, scale: 6
