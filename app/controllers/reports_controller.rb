@@ -1,5 +1,20 @@
 class ReportsController < ApplicationController
 	def infected
+
+		percent = ( infected_count/all_survivors) * 100 
+
+		render json: { "infected_survivors":"#{percent}"+"%" }
+	end
+
+	def non_infected
+
+
+		percent = ( non_infected_count/all_survivors) * 100 
+
+		render json: { "non_infected_survivors":"#{percent}"+"%" }		
+	end
+
+	def infected_count
 		survivors = Survivor.all
 		all = Survivor.count
 		puts "total #{all}"
@@ -10,12 +25,11 @@ class ReportsController < ApplicationController
 				end 
 				puts "infected #{qtd_infect}"
 		end
-		percent = ( qtd_infect.to_f/all.to_f ) * 100 
 
-		render json: { "infected_survivors":"#{percent}"+"%" }
+		qtd_infect.to_f
 	end
 
-	def non_infected
+	def non_infected_count
 		survivors = Survivor.all
 		all = Survivor.count
 		puts "total #{all}"
@@ -27,8 +41,10 @@ class ReportsController < ApplicationController
 				puts "non_infected #{qtd_non_infect}"
 		end
 
-		percent = ( qtd_non_infect.to_f/all.to_f ) * 100 
+		qtd_non_infect.to_f
+	end
 
-		render json: { "non_infected_survivors":"#{percent}"+"%" }		
+	def all_survivors
+		Survivor.count.to_f
 	end
 end
