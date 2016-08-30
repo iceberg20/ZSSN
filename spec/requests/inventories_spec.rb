@@ -1,4 +1,4 @@
-require 'rails_helper'
+require_relative '../spec_helper'
 
 RSpec.describe "Inventories", :type => :request do
   describe "GET /inventories" do

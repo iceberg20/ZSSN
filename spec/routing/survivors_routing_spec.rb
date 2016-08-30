@@ -1,4 +1,4 @@
-require "rails_helper"
+require_relative '../spec_helper'
 
 RSpec.describe SurvivorsController, :type => :routing do
   describe "routing" do
