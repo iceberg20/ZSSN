@@ -45,9 +45,9 @@ Exemple: curl -X PATCH https://zssn-italo.herokuapp.com/report_infection/1
 URL: /inventories
 
 A survivor must be created before.
-
+```ruby
 Exemple: curl -H "Content-Type: application/json" -X POST -d '{"inventory": {"water": "1", "food":"3", "medication": "4", "ammunition": "1" }}' https://zssn-italo.herokuapp.com/inventories
-
+```
 
 
 
