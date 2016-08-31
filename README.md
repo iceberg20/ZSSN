@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##API Documentation
 
-Things you may want to cover:
+URL = https://zssn-italo.herokuapp.com
 
-* Ruby version
+###Creat Survivor
 
-* System dependencies
+URL: /survivors
 
-* Configuration
+Method: POST
 
-* Database creation
+Params:
+```ruby
+{  
+   "survivor":{  
+      "name":"Michonne",
+      "age":"19",
+      "gender":"Female",
+      "lat":"10",
+      "long":"20",
+      "infected_reports":"0"
+   }
+}
+```
 
-* Database initialization
+###List Survivors
 
-* How to run the test suite
+URL: /survivors
 
-* Services (job queues, cache servers, search engines, etc.)
+Method: GET
 
-* Deployment instructions
 
-* ...
+
+
+
+
