@@ -1,5 +1,10 @@
 require_relative '../spec_helper'
 
+
 RSpec.describe Survivor, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "is named Michonne" do
+  	survivor = Survivor.new
+  	survivor.name = 'Michonne'
+  	expect(survivor.name).to eq('Michonne')
+  end
 end

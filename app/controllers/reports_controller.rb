@@ -47,4 +47,19 @@ class ReportsController < ApplicationController
 	def all_survivors
 		Survivor.count.to_f
 	end
+
+  # PATCH/PUT /survivors/1
+	def report_infection
+		survivor = Survivor.find(params[:id])
+		puts survivor
+		puts survivor.infected_reports
+		survivor.infected_reports+=1
+		survivor.save
+		if survivor.infected_reports >= 3
+		  render json: { message: "Survivor infected!" }
+		else
+		  render json: { message: "Survivor is not infected!" }
+		end
+	end
+
 end
