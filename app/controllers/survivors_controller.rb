@@ -1,5 +1,5 @@
 class SurvivorsController < ApplicationController
-  before_action :set_survivor, only: [:show, :update, :destroy]
+  before_action :set_survivor, only: [:show, :update, :destroy, :update_location]
 
   # GET /survivors
   def index
@@ -19,6 +19,15 @@ class SurvivorsController < ApplicationController
 
     if @survivor.save
       render json: @survivor, status: :created, location: @survivor
+    else
+      render json: @survivor.errors, status: :unprocessable_entity
+    end
+  end
+
+  # PATCH/PUT /survivors/update_location
+  def update_location
+    if @survivor.update(lat: params[:lat].to_s, long: params[:long].to_s)
+      render json: @survivor
     else
       render json: @survivor.errors, status: :unprocessable_entity
     end
@@ -47,5 +56,10 @@ class SurvivorsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def survivor_params
       params.require(:survivor).permit(:name, :age, :gender, :lat, :long, :infected_reports)
+    end
+
+    # Only allow a trusted parameter "white list" through.
+    def update_location_params
+       params.permit(:id, :lat, :long)      
     end
 end

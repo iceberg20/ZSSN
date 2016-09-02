@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   #patch :report_infection, to: 'reports#report_infection'
 
   patch 'report_infection/:id' => 'reports#report_infection'
+  patch 'update_location/:id/:lat/:long' => 'survivors#update_location'
  
 end
