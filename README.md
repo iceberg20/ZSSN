@@ -49,6 +49,15 @@ A survivor must be created before.
 Exemple: curl -H "Content-Type: application/json" -X POST -d '{"inventory": {"water": "1", "food":"3", "medication": "4", "ammunition": "1" }}' https://zssn-italo.herokuapp.com/inventories
 ```
 
+###Update survivor Location
+
+URL: /update_location/:id/:lat/:long
+
+Method: PATCH
+```ruby
+curl -X PATCH http://localhost:3000/update_location/1/99/88
+```
+
 
 
 
