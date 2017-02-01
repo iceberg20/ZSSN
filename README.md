@@ -23,7 +23,7 @@ Params:
    }
 }
 
-Exemple: curl -H "Content-Type: application/json" -X POST -d '{"survivor": {"name": "Rick Grimmes", "age": "30", "gender": "Male", "lat": "10", "long": "20","infected_reports": "0"}}' https://zssn-italo.herokuapp.comreport_infection/survivors
+Exemple: curl -H "Content-Type: application/json" -X POST -d '{"survivor": {"name": "Rick Grimmes", "age": "30", "gender": "Male", "lat": "10", "long": "20","infected_reports": "0"}}' https://zssn-italo.herokuapp.com/survivors
 ```
 
 ###List Survivors
