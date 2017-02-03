@@ -25,31 +25,32 @@ class TradeController < ApplicationController
  			Survivor.transaction do
  				begin
 		 			# Surviver_1 receiving items
-					@survivor_1.inventory.water = @survivor_1.inventory.water + items_2["water"].to_i
-					@survivor_1.inventory.food = @survivor_1.inventory.food + items_2["food"].to_i
-					@survivor_1.inventory.medication = @survivor_1.inventory.medication + items_2["medication"].to_i
-					@survivor_1.inventory.ammunition = @survivor_1.inventory.ammunition + items_2["ammunition"].to_i
+					@survivor_1.inventory.water =+ items_2["water"].to_i
+					@survivor_1.inventory.food =+ items_2["food"].to_i
+					@survivor_1.inventory.medication =+ items_2["medication"].to_i
+					@survivor_1.inventory.ammunition =+ items_2["ammunition"].to_i
 
 					# Surviver_1 giving items
-					@survivor_1.inventory.water = @survivor_1.inventory.water - items_1["water"].to_i
-					@survivor_1.inventory.food = @survivor_1.inventory.food - items_1["food"].to_i
-					@survivor_1.inventory.medication = @survivor_1.inventory.medication - items_1["medication"].to_i
-					@survivor_1.inventory.ammunition = @survivor_1.inventory.ammunition - items_1["ammunition"].to_i
+					@survivor_1.inventory.water =- items_1["water"].to_i
+					@survivor_1.inventory.food =- items_1["food"].to_i
+					@survivor_1.inventory.medication =- items_1["medication"].to_i
+					@survivor_1.inventory.ammunition =- items_1["ammunition"].to_i
 		 			
 		 			# Surviver_2 receiving items
-					@survivor_2.inventory.water = @survivor_2.inventory.water + items_2["water"].to_i
-					@survivor_2.inventory.food =  @survivor_2.inventory.food + items_2["food"].to_i
-					@survivor_2.inventory.medication = @survivor_2.inventory.medication + items_2["medication"].to_i
-					@survivor_2.inventory.ammunition = @survivor_2.inventory.ammunition + items_2["ammunition"].to_i
+					@survivor_2.inventory.water =+ items_2["water"].to_i
+					@survivor_2.inventory.food =+ items_2["food"].to_i
+					@survivor_2.inventory.medication =+ items_2["medication"].to_i
+					@survivor_2.inventory.ammunition =+ items_2["ammunition"].to_i
 
 					# Surviver_2 giving items
-					@survivor_2.inventory.water = @survivor_2.inventory.water - items_2["water"].to_i
-					@survivor_2.inventory.food = @survivor_2.inventory.food - items_2["food"].to_i
-					@survivor_2.inventory.medication = @survivor_2.inventory.medication - items_2["medication"].to_i
-					@survivor_2.inventory.ammunition = @survivor_2.inventory.ammunition - items_2["ammunition"].to_i
+					@survivor_2.inventory.water =- items_2["water"].to_i
+					@survivor_2.inventory.food =- items_2["food"].to_i
+					@survivor_2.inventory.medication =- items_2["medication"].to_i
+					@survivor_2.inventory.ammunition =- items_2["ammunition"].to_i
 
 		 			@survivor_1.inventory.save
 		 			@survivor_2.inventory.save
+
  				end
  			end
 
