@@ -8,3 +8,10 @@ RSpec.describe Survivor, :type => :model do
   	expect(survivor.name).to eq('Michonne')
   end
 end
+
+RSpec.describe Survivor, :type => :model do
+  it "is yelling hi" do
+  	survivor = Survivor.new
+  	expect(survivor.yell).to eq('Hi!')
+  end
+end

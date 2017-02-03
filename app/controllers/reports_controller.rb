@@ -51,8 +51,6 @@ class ReportsController < ApplicationController
   # PATCH/PUT /survivors/1
 	def report_infection
 		survivor = Survivor.find(params[:id])
-		puts survivor
-		puts survivor.infected_reports
 		survivor.infected_reports+=1
 		survivor.save
 		if survivor.infected_reports >= 3

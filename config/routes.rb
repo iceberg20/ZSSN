@@ -9,5 +9,9 @@ Rails.application.routes.draw do
 
   patch 'report_infection/:id' => 'reports#report_infection'
   patch 'update_location/:id/:lat/:long' => 'survivors#update_location'
+
+  post '/trade', to: 'trade#trade'
+  get '/value', to: 'trade#value'
+  post '/test', to: 'trade#test'
  
 end
