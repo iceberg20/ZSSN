@@ -12,6 +12,5 @@ Rails.application.routes.draw do
 
   post '/trade', to: 'trade#trade'
   get '/value', to: 'trade#value'
-  post '/test', to: 'trade#test'
  
 end

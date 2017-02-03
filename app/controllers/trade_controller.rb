@@ -1,11 +1,6 @@
 class TradeController < ApplicationController
 
-	def test
-		render plain: "OK!"	
-	end
-	
 	# POST /trade                            
-
 	def trade
   	if valid_trade?(params)
   		@survivor_id_1 = params["survivor_1"]["id"].to_i
