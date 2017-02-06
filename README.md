@@ -36,9 +36,9 @@ Method: GET
 
 URL: /report_infection/:id
 
-Method: PATCH
+Method: GET
 
-Exemple: curl -X PATCH https://zssn-italo.herokuapp.com/report_infection/1
+Exemple: curl -X GET https://zssn-italo.herokuapp.com/report_infection/1
 
 
 ###Add iventory
