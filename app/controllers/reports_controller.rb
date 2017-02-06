@@ -1,14 +1,11 @@
 class ReportsController < ApplicationController
 	def infected
-
 		percent = ( infected_count/all_survivors ) * 100 
 
 		render json: { "infected_survivors":"#{percent}"+"%" }
 	end
 
 	def non_infected
-
-
 		percent = ( non_infected_count/all_survivors ) * 100 
 
 		render json: { "non_infected_survivors":"#{percent}"+"%" }		
@@ -48,7 +45,6 @@ class ReportsController < ApplicationController
 		Survivor.count.to_f
 	end
 
-  # PATCH/PUT /survivors/1
 	def report_infection
 		survivor = Survivor.find(params[:id])
 		survivor.infected_reports+=1

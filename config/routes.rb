@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get :non_infected, to: 'reports#non_infected'
   #patch :report_infection, to: 'reports#report_infection'
 
-  patch 'report_infection/:id' => 'reports#report_infection'
-  patch 'update_location/:id/:lat/:long' => 'survivors#update_location'
+  get 'report_infection/:id' => 'reports#report_infection'
+  get 'update_location/:id/:lat/:long' => 'survivors#update_location'
 
   post '/trade', to: 'trade#trade' 
 end
