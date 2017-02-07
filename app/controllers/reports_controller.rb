@@ -56,4 +56,31 @@ class ReportsController < ApplicationController
 		end
 	end
 
+	def avg_resourses
+		water = 0
+		food = 0
+		medication = 0
+		ammunition = 0
+
+		Survivor.not_infected.each do |survivor|
+			water+= survivor.inventory.water
+			food+= survivor.inventory.food
+			medication+= survivor.inventory.medication
+			ammunition+= survivor.inventory.ammunition
+		end
+
+
+		qtd = Survivor.not_infected.count
+
+		avg_water = water/qtd
+		avg_food = food/qtd
+		avg_medication = medication/qtd
+		avg_ammunition = ammunition/qtd
+
+		avg_report = {avg_water: avg_water, avg_food: avg_food, avg_medication: avg_medication, 
+			avg_ammunition: avg_ammunition }
+
+		render json: avg_report
+	end
+
 end

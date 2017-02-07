@@ -4,6 +4,9 @@ class Survivor < ApplicationRecord
 
 	validates :name, :age, :gender, :lat, :long, presence: true
 
+	scope :infected, -> { where("infected_reports >= 3") }
+	scope :not_infected, -> { where("infected_reports < 3") }
+
 	def initializer
 	end
 

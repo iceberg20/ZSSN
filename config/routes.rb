@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get 'report_infection/:id' => 'reports#report_infection'
   get 'update_location/:id/:lat/:long' => 'survivors#update_location'
+  get 'avg_resourses' => 'reports#avg_resourses'
 
   post '/trade', to: 'trade#trade' 
 end
