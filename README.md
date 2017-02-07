@@ -36,9 +36,9 @@ Method: GET
 
 URL: /report_infection/:id
 
-Method: PATCH
+Method: GET
 
-Exemple: curl -X PATCH https://zssn-italo.herokuapp.com/report_infection/1
+Exemple: curl -X GET https://zssn-italo.herokuapp.com/report_infection/1
 
 
 ###Add iventory
@@ -53,9 +53,9 @@ Exemple: curl -H "Content-Type: application/json" -X POST -d '{"inventory": {"wa
 
 URL: /update_location/:id/:lat/:long
 
-Method: PATCH
+Method: GET
 ```ruby
-curl -X PATCH http://localhost:3000/update_location/1/99/88
+curl -X GET http://localhost:3000/update_location/1/99/88
 ```
 
 
